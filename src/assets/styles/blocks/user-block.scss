@@ -1,0 +1,49 @@
+.user-block {
+  display: flex;
+  align-items: center;
+
+  &__order {
+    margin-right: 21px;
+
+    @include to(480px) {
+      display: none;
+    }
+  }
+
+  &__login {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+
+    @include to(660px) {
+      display: none;
+    }
+
+    &-icon {
+      width: 31px;
+      height: 32px;
+      margin-right: 10px;
+    }
+
+    &-arrow {
+      position: absolute;
+      top: 11px;
+      left: 7px;
+      z-index: 2;
+      width: 14px;
+      height: 10px;
+      transition: all .4s;
+    }
+
+    margin-right: 48px;
+    color: #fff;
+
+    &:hover {
+      opacity: 0.9;
+
+      .user-block__login-arrow {
+        transform: translateX(3px);
+      }
+    }
+  }
+}

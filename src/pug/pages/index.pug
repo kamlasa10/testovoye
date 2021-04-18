@@ -1,0 +1,182 @@
+
+extends ../layout/main
+block variable
+	-
+		var title_page = 'Price'
+		var id_page = 'page-price'
+		var class_page = 'price-page'
+		var tableData = [
+						'Resume writing',
+						'Resume editing',
+						'CV writing',
+						'CV editing',
+						'Cover letter writing',
+						'LinkedIn® Pro Bio',
+						'Resume design services',
+						'Resume/CV review',
+						'Basic Package: Resume + CV writing',
+						'Resume Package: Resume + ',
+						'CV Package: CV + cover letter writing',
+						'Full Resume Package: Resume + ',
+						'Cover Letter + Thank-you/Follow-up Letters',
+						'Full CV Package: CV + Cover Letter +',
+						'Thank-you/Follow-up Letters',
+						'New! E-Cover Letter Writing',
+						'Online Resume Storage',
+						'Resume Distribution to Employment  Agencies',
+						'Thank You & Follow-up Letters',
+						'KSAs - Knowledge, Skills, Abilities',
+						'Interview Tips',
+						'Interview Tips',
+						'List of International Recruiting Agencies'
+		]
+block meta
+	title= title_page
+	meta(name='description', content='')
+block head
+		link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+	script(defer src='./assets/scripts/index.js')
+block content
+	.wrapper
+		.promo
+			.container
+				.promo__content
+					.promo__wrap
+						.title.promo__title Prices
+						.promo__desc High quality requires high price as a rule. But you can break this exact rule, if you order from Essay! We have the most reasonable prices for papers.
+						a(href="#").promo__btn.btn Learn more
+		.breadcrumbs
+			.container
+				ul.breadcrumbs__list
+					li.breadcrumbs__item
+						a(href="#")
+							span Site long url u
+							+svg('short-arrow')
+					li.breadcrumbs__item.current Prices
+		main.content.tabs
+			.tabs__left
+				.tabs__list
+					button(type="button" data-tab="1").tabs__btn.active.btn-res.js-tabs__btn
+						span Prices
+						span.choise__curreny-decor
+					button(type="button" data-tab="2").tabs__btn.btn-res.js-tabs__btn
+						span Discounts
+						span.choise__curreny-decor
+					button(type="button" data-tab="3").tabs__btn.btn-res.js-tabs__btn
+						span Privacy & Guarantees
+						span.choise__curreny-decor
+					button(type="button" data-tab="4").tabs__btn.btn-res.js-tabs__btn
+						span Extras
+						span.choise__curreny-decor
+			.tabs__content
+				.tabs__content-item.js-tabs__content-item(data-tab-content="1")
+					.tabs__content-top
+						.tabs__content-top-left
+							.choise
+								.choise__item.choise__item--wrap
+									.choise__text Currency
+									button(type="button" data-currency="eur" data-tab="1").choise__currency.btn-res.js-choise__currency
+										span EUR
+									button(type="button" data-currency="gbr" data-tab="2").choise__currency.btn-res.js-choise__currency
+										span GBP
+									button(type="button" data-currency="aud" data-tab="3").choise__currency.btn-res.js-choise__currency
+										span AUD
+									button(type="button" data-currency="cad" data-tab="4").choise__currency.btn-res.js-choise__currency
+										span CAD
+									button(type="button" data-currency="usd" data-tab="5").choise__currency.current.btn-res.js-choise__currency
+										span USD
+								.choise__item.choise__select.js-choise__select.choise__services(data-select="1")
+									+svg('short-arrow').choise__select-icon
+									.choise__text Type of service
+									.choise__services-current(data-select-currency="1") Resume/CV services
+									.choise__select-dropdown.select-dropdown
+										.select-dropdown__item.js-select-dropdown__item.current Resume/CV services
+										.select-dropdown__item.js-select-dropdown__item test 1
+										.select-dropdown__item.js-select-dropdown__item test 2
+										.select-dropdown__item.js-select-dropdown__item test 3
+								.choise__item.choise__select.js-choise__select.choise__level(data-select="2")
+									+svg('short-arrow').choise__select-icon
+									.choise__text Select level
+									.choise__services-current(data-select-currency="2") Entry
+									.choise__select-dropdown.select-dropdown
+										.select-dropdown__item.js-select-dropdown__item.current Entry
+										.select-dropdown__item.js-select-dropdown__item test 1
+										.select-dropdown__item.js-select-dropdown__item test 2
+										.select-dropdown__item.js-select-dropdown__item test 3
+						.tabs__content-top-right.choise-info
+							.choise-info__content
+								.choise-info__content-wrap
+									.choise-info__top
+										.choise-info__top-title The final price depends on:
+										.choise-info__top-discount
+											+svg('percent')
+									.choise-info__decor
+									ul.choise-info__items
+										li.choise-info__item
+											+svg('check')
+											span Number of pages
+										li.choise-info__item
+											+svg('check')
+											span Academic level
+										li.choise-info__item
+											+svg('check')
+											span Urgency
+									.choise-info__decor
+									.choise-info__text That's all. No hidden charges!
+									.choise-info__tooltip
+										.choise-info__tooltip-wrap
+											.choise-info__tooltip-text There can be discounts for your order!
+											a(href="#").choise-info__tooltip-link Get your discount
+					form.tabs__content-bottom.table-prices.js-table-prices(data-form="true")
+						.table-prices__wrap
+							.table-prices__top.table-prices__item
+								.table-prices__name Urgency
+								.table-prices__item-wrap
+									.table-prices__cell-data 5 days
+									.table-prices__cell-data 3 days
+									.table-prices__cell-data 48 hours
+									.table-prices__cell-data 24 hours
+							.table-prices__content
+								.table-prices__left
+									.table-prices__left-top.table-prices__left-item
+										.table-prices__left-text Most popular
+									.table-prices__left-bottom.table-prices__left-item
+										.table-prices__left-text Other
+								.table-prices__right
+									each val, idx in tableData
+										- var data = [Math.floor((idx * 100) / 8), Math.floor((idx * 100) / 5), Math.floor((idx * 100) / 2), Math.floor((idx * 100) / 1.5)]
+										.table-prices__item
+											.table-prices__name= val
+											.table-prices__item-wrap
+												label.table-prices__cell(data-cell=idx)
+													input(type="checkbox"  value=`${data[0] ? '$' + data[0] + '.00' : '$'+ 15 + '.00'}`)
+													span.js-cell.table-prices__cell-data=data[0] ? '$' + data[0] + '.00' : '$'+ 15 + '.00'
+												label.table-prices__cell(data-cell=idx)
+													input(type="checkbox"  value=`${data[1] ? '$' + data[1] + '.00' : '$'+ 30 +
+																	'.00'}`)
+													span.js-cell.table-prices__cell-data=data[1] ? '$' + data[1] + '.00' : '$'+ 30 + '.00'
+												label.table-prices__cell(data-cell=idx)
+													input(type="checkbox"  value=value=`${data[2] ? '$' + data[2] + '.00' : '$'+
+																	45 + '.00'}`)
+													span.js-cell.table-prices__cell-data=data[2] ? '$' + data[2] + '.00' : '$'+ 45 + '.00'
+												label.table-prices__cell(data-cell=idx)
+													input(type="checkbox"  value=`${data[3] ? '$' + data[3] + '.00' : '$'+ 10 +
+																	'.00'}`)
+													span.js-cell.table-prices__cell-data=data[3] ? '$' + data[3] + '.00' :'$'+ 10 + '.00'
+						.table-prices__info
+							.table-prices__info-total.js-table-prices__info-total
+								span Total price:
+								sup $
+								span.js-table-prices__total 0
+								span(class="table-prices__total-small js-table-prices__total-small") .00
+							a(href="#" class="btn table-prices__btn red") Proceed to Order
+						.table-prices__help
+							.table-prices__help-title Do not know exactly what you need?
+							a(href="#" class="btn table-prices__help-btn light") Get a free quote
+
+block footer
+	include ../includes/footer.pug
+
+block header
+	include ../includes/header

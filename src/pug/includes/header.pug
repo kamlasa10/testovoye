@@ -1,0 +1,18 @@
+header.header
+  .container
+    .header__content
+      .header__contacts
+        a(href="tel:3055648822").header__contacts--phone.header__contacts-link
+          +svg('phone')
+          span (305) 564-88-22
+        button(type="button" class="btn-res").header__contacts--chat.header__contacts-link
+          +svg('chat')
+          span Live chat
+      .header__user-block.user-block
+        a(href="#").user-block__order.btn Order now
+        a(href="#").user-block__login
+          +svg('login').user-block__login-icon
+          +svg('arrow').user-block__login-arrow
+          span Login
+        button(type="button" class="burger-menu js-burger-menu btn-res")
+          +svg('burger-menu')

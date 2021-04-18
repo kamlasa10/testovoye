@@ -1,0 +1,67 @@
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  background-color: $black;
+  height: $header-height;
+  transition: all .4s;
+
+  &.moving {
+    box-shadow: 0 0 10px rgba(#000, 0.5);
+  }
+
+  .container {
+    height: 100%;
+  }
+
+  &__content {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__contacts {
+    display: flex;
+    align-items: center;
+
+    &-link {
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      transition: all .4s;
+
+      &:not(:last-child) {
+        margin-right: 55px;
+
+        @include to(480px) {
+          margin-right: 15px;
+        }
+      }
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+
+    &--phone,
+    &--chat {
+      svg {
+        margin-right: 6px;
+        fill: none;
+        width: 14px;
+        height: 14px;
+        stroke: $brown;
+      }
+    }
+
+    &--phone {
+      svg {
+        stroke: transparent;
+      }
+    }
+  }
+
+
+}

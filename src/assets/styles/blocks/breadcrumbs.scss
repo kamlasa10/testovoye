@@ -1,0 +1,37 @@
+.breadcrumbs {
+  position: relative;
+  background-color: #fff;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 41px;
+    right: 0;
+    height: 1px;
+    background-color: #DEDEE1;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    min-height: 50px;
+  }
+
+  &__item {
+    margin-right: 7px;
+    font-size: 15px;
+    line-height: 1em;
+    color: $black;
+
+    a {
+      color: #73747E;
+    }
+
+    svg {
+      width: 7px;
+      height: 8px;
+      margin-left: -2px;
+    }
+  }
+}

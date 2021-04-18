@@ -1,0 +1,58 @@
+* {
+	box-sizing: border-box;
+}
+
+*::after, *::before {
+	box-sizing: border-box;
+}
+
+
+@include reset();
+
+.debug {
+	z-index: 999999;
+	@include debug(rgba(0, 0, 0, .5), 1px solid #ff0);
+}
+
+.container {
+	@include wrapper();
+}
+
+
+html{
+	font-size: 14px;
+	@include to(768px){
+		font-size: 10px;
+	}
+	@include to(576px){
+		font-size: 8.5px;
+	}
+}
+body {
+	position: relative;
+	margin: 0;
+	min-width: 320px;
+	line-height: 1em;
+	font-family: $default-font;
+	overflow-x: hidden;
+	font-size: 16px;
+	color: $black;
+	background: #fff;
+	background-size: contain;
+	@include to(1200px){
+		background: #fff;
+	}
+
+	@include to(480px) {
+		font-size: 15px;
+	}
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+body *:focus {
+  outline: none;
+}

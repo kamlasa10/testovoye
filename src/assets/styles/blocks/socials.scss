@@ -1,0 +1,55 @@
+.socials {
+  display: flex;
+  align-items: center;
+
+  &__item {
+    &:not(&:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 1px solid $brown;
+    transition: all .4s;
+
+    svg {
+      transition: all .4s;
+      fill: $brown;
+    }
+
+    &--1 {
+      svg {
+        width: 8px;
+        height: 15px;
+      }
+    }
+
+    &--2 {
+      svg {
+        width: 17px;
+        height: 14px;
+      }
+    }
+
+    &--3 {
+      svg {
+        width: 14px;
+        height: 15px;
+      }
+    }
+
+    &:hover {
+      border-color: #fff;
+
+      svg {
+        opacity: 0.8;
+      }
+    }
+  }
+}

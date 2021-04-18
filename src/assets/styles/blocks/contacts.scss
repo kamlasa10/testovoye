@@ -1,0 +1,45 @@
+.contacts {
+  display: flex;
+  flex-direction: column;
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    font-size: 15px;
+    line-height: 1.9em;
+    color: #fff;
+    margin-bottom: 10px;
+    transition: all .4s;
+
+    svg {
+      fill: $brown;
+      margin-right: 10px;
+    }
+
+    &--1 {
+      svg {
+        width: 16px;
+        height: 16px;
+      }
+    }
+
+    &--2 {
+      svg {
+        min-width: 18px;
+        height: 14px;
+      }
+    }
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__socials {
+    margin-top: 21px;
+
+    @include to(870px) {
+      margin-top: 10px;
+    }
+  }
+}
